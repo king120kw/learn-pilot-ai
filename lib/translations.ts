@@ -183,84 +183,84 @@ const englishTranslations: Translation = {
   complete: 'Complete',
 }
 
-// Filipino/Tagalog translations
+// Filipino/Tagalog translations - Rewritten
 const filipinoTranslations: Translation = {
   // Navigation & Common
   learnPilot: 'LearnPilot',
-  features: 'Mga Tampok',
-  testimonials: 'Mga Testimonial',
+  features: 'Mga Katangian',
+  testimonials: 'Mga Patunay',
   pricing: 'Presyo',
   login: 'Mag-login',
-  signUp: 'Mag-sign up',
+  signUp: 'Mag-rehistro',
   getStarted: 'Magsimula',
-  learnMore: 'Matuto Pa',
+  learnMore: 'Alamin Pa',
 
   // Hero Section
-  learnSmarterWith: 'Mag-aral nang mas matalino gamit ang',
+  learnSmarterWith: 'Mag-aral nang mas matalino sa pamamagitan ng',
   aiAssistance: 'tulong ng AI',
-  heroDescription: 'Ginagamit ng LearnPilot ang advanced AI para i-personalize ang inyong learning experience, tumulong sa practice, at ma-master ang anumang subject nang mas mabilis.',
+  heroDescription: 'Gumagamit ang LearnPilot ng makabagong AI upang gawing personal ang inyong karanasan sa pag-aaral, tumulong sa pagsasanay, at makamit ang anumang paksa nang mas mabilis kaysa dati.',
 
   // Dashboard
   goodMorning: 'Magandang umaga',
-  goodAfternoon: 'Magandang hapon',
+  goodAfternoon: 'Magandang tanghali',
   goodEvening: 'Magandang gabi',
   welcomeBack: 'Maligayang pagbabalik',
-  overviewDescription: 'Narito ang overview ng inyong learning progress at mga upcoming activities.',
-  quickAccess: 'Mabilis na Access',
-  mockInterview: 'Mock Interview',
-  practiceInterview: 'Mag-practice para sa susunod na interview',
-  studyBuddy: 'Study Buddy',
-  personalizedHelp: 'Makakuha ng personalized learning help',
-  videoMeeting: 'Video Meeting',
-  liveSessionsHost: 'Mag-host o sumali sa live sessions',
+  overviewDescription: 'Narito ang buod ng inyong pag-unlad sa pag-aaral at mga paparating na gawain.',
+  quickAccess: 'Mabilis na Pag-access',
+  mockInterview: 'Pagsasanay na Panayam',
+  practiceInterview: 'Magsanay para sa susunod na panayam',
+  studyBuddy: 'Kasama sa Pag-aaral',
+  personalizedHelp: 'Kumuha ng personal na tulong sa pag-aaral',
+  videoMeeting: 'Video na Pulong',
+  liveSessionsHost: 'Mag-host o sumali sa mga live na sesyon',
 
   // Stats
-  overallProgress: 'Kabuuang Progress',
+  overallProgress: 'Kabuuang Pag-unlad',
   thisWeek: 'ngayong linggo',
-  currentStreak: 'Kasalukuyang Streak',
+  currentStreak: 'Kasalukuyang Sunod-sunod',
   days: 'mga araw',
   keepItUp: 'Ipagpatuloy mo!',
-  achievements: 'Mga Tagumpay',
-  earned: 'nakamit',
+  achievements: 'Mga Nakamit',
+  earned: 'nakuha',
   inProgress: 'ginagawa',
 
   // Recent Activities
-  recentActivities: 'Mga Kamakailang Aktibidad',
+  recentActivities: 'Mga Kamakailang Gawain',
   viewAll: 'Tingnan lahat',
-  completedMockInterview: 'Natapos ang mock interview',
-  studiedFlashcards: 'Nag-aral ng flashcards',
+  completedMockInterview: 'Natapos ang pagsasanay na panayam',
+  studiedFlashcards: 'Nag-aral ng mga flash card',
   joinedVideoSession: 'Sumali sa video session',
-  ago: 'nakaraan',
+  ago: 'nakalipas',
   minutes: 'mga minuto',
   hours: 'mga oras',
 
   // Recommended Topics
-  recommendedTopics: 'Mga Inirerekomendang Topic',
-  basedOnProgress: 'Batay sa inyong progress',
-  dataStructures: 'Data Structures',
-  algorithms: 'Algorithms',
-  systemDesign: 'System Design',
-  behavioralQuestions: 'Behavioral Questions',
+  recommendedTopics: 'Mga Inirerekomendang Paksa',
+  basedOnProgress: 'Batay sa inyong pag-unlad',
+  dataStructures: 'Mga Istraktura ng Data',
+  algorithms: 'Mga Algorithm',
+  systemDesign: 'Disenyo ng Sistema',
+  behavioralQuestions: 'Mga Tanong sa Ugali',
 
   // Upcoming Sessions
-  upcomingSessions: 'Mga Paparating na Session',
-  noUpcomingSessions: 'Walang paparating na sessions',
-  scheduleSession: 'Mag-schedule ng session',
+  upcomingSessions: 'Mga Paparating na Sesyon',
+  noUpcomingSessions: 'Walang paparating na mga sesyon',
+  scheduleSession: 'Mag-iskedyul ng sesyon',
 
   // Settings
   settings: 'Mga Setting',
   language: 'Wika',
-  theme: 'Theme',
-  notifications: 'Mga Notification',
+  theme: 'Tema',
+  notifications: 'Mga Abiso',
 
   // Common Actions
   save: 'I-save',
   cancel: 'Kanselahin',
   edit: 'I-edit',
-  delete: 'Tanggalin',
+  delete: 'Burahin',
   view: 'Tingnan',
   start: 'Simulan',
-  continue: 'Ipagpatuloy',
+  continue: 'Magpatuloy',
   complete: 'Tapusin',
 }
 
