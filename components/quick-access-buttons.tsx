@@ -3,11 +3,14 @@
 import Link from "next/link"
 import { MessageSquare, BookOpen, Video } from "lucide-react"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/components/language-provider"
 
 export function QuickAccessButtons() {
+  const { t, isRTL } = useTranslation()
+
   return (
-    <div className="rounded-2xl bg-white/90 p-8 shadow-lg border border-gray-100">
-      <h2 className="mb-6 text-xl font-bold text-gray-900 tracking-tight">Quick Access</h2>
+    <div className={`rounded-2xl bg-white/90 p-8 shadow-lg border border-gray-100 ${isRTL ? 'text-right' : 'text-left'}`}>
+      <h2 className="mb-6 text-xl font-bold text-gray-900 tracking-tight">{t('quickAccess')}</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Link
           href="/dashboard/mock-interviews"
@@ -16,8 +19,8 @@ export function QuickAccessButtons() {
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-600 transition-colors shadow-md">
             <MessageSquare className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors" />
           </div>
-          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Mock Interview</h3>
-          <p className="mt-1 text-xs text-gray-500">Practice for your next interview</p>
+          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{t('mockInterview')}</h3>
+          <p className="mt-1 text-xs text-gray-500">{t('practiceInterview')}</p>
         </Link>
 
         <Link
@@ -27,8 +30,8 @@ export function QuickAccessButtons() {
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 group-hover:bg-green-600 transition-colors shadow-md">
             <BookOpen className="h-7 w-7 text-green-600 group-hover:text-white transition-colors" />
           </div>
-          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-green-700 transition-colors">Study Buddy</h3>
-          <p className="mt-1 text-xs text-gray-500">Get personalized learning help</p>
+          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-green-700 transition-colors">{t('studyBuddy')}</h3>
+          <p className="mt-1 text-xs text-gray-500">{t('personalizedHelp')}</p>
         </Link>
 
         <Link
@@ -47,8 +50,8 @@ export function QuickAccessButtons() {
           >
             <Video className="h-7 w-7 text-purple-600 group-hover:text-white transition-colors" />
           </motion.div>
-          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">Video Meeting</h3>
-          <p className="mt-1 text-xs text-gray-500">Host or join live sessions</p>
+          <h3 className="mt-4 font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">{t('videoMeeting')}</h3>
+          <p className="mt-1 text-xs text-gray-500">{t('liveSessionsHost')}</p>
         </Link>
       </div>
     </div>

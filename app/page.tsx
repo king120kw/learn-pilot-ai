@@ -1,38 +1,45 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { PhoneMockup } from "@/components/phone-mockup"
+import { LanguageSelector } from "@/components/language-selector"
 import { MessageSquare, BookOpen, Video, CheckCircle } from "lucide-react"
+import { useTranslation } from "@/components/language-provider"
 
 export default function LandingPage() {
+  const { t, isRTL } = useTranslation()
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className={`flex min-h-screen flex-col ${isRTL ? 'rtl' : 'ltr'}`}>
       {/* Navigation */}
       <header className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center">
-            <Image src="/logo.png" alt="LearnPilot Logo" width={32} height={32} className="mr-2" />
-            <span className="text-xl font-bold text-blue-600">LearnPilot</span>
+            <Image src="/logo.png" alt="LearnPilot Logo" width={32} height={32} className={`${isRTL ? 'ml-2' : 'mr-2'}`} />
+            <span className="text-xl font-bold text-blue-600">{t('learnPilot')}</span>
           </Link>
 
           <nav className="hidden space-x-8 md:flex">
             <Link href="#features" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-              Features
+              {t('features')}
             </Link>
             <Link href="#testimonials" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-              Testimonials
+              {t('testimonials')}
             </Link>
             <Link href="#pricing" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-              Pricing
+              {t('pricing')}
             </Link>
           </nav>
 
           <div className="flex items-center space-x-4">
+            <LanguageSelector />
             <Button variant="outline" size="sm" className="hidden md:inline-flex">
-              Log in
+              {t('login')}
             </Button>
             <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              Sign up
+              {t('signUp')}
             </Button>
           </div>
         </div>
@@ -43,20 +50,19 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20">
-            <div className="flex flex-col justify-center">
+            <div className={`flex flex-col justify-center ${isRTL ? 'text-right' : 'text-left'}`}>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                Learn smarter with <span className="text-blue-600">AI assistance</span>
+                {t('learnSmarterWith')} <span className="text-blue-600">{t('aiAssistance')}</span>
               </h1>
               <p className="mt-6 text-xl text-gray-600">
-                LearnPilot uses advanced AI to personalize your learning experience, help you practice, and master any
-                subject faster than ever before.
+                {t('heroDescription')}
               </p>
-              <div className="mt-10 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <div className={`mt-10 flex flex-col space-y-4 sm:flex-row ${isRTL ? 'sm:space-x-reverse' : 'sm:space-x-4'} sm:space-y-0`}>
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Get Started
+                  {t('getStarted')}
                 </Button>
                 <Button variant="outline" size="lg">
-                  Learn More
+                  {t('learnMore')}
                 </Button>
               </div>
             </div>
@@ -73,7 +79,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section id="features" className="bg-white py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className={`mx-auto max-w-3xl ${isRTL ? 'text-right' : 'text-center'}`}>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Powerful features to accelerate your learning
             </h2>
@@ -84,36 +90,42 @@ export default function LandingPage() {
 
           <div className="mt-20 grid grid-cols-1 gap-12 md:grid-cols-3">
             {/* Feature 1 */}
-            <div className="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <div className={`group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white ${isRTL ? 'float-right' : 'float-left'}`}>
                 <MessageSquare className="h-6 w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Mock Interview</h3>
-              <p className="text-gray-600">
-                Practice interviews with our AI that simulates real-world scenarios and provides instant feedback.
-              </p>
+              <div className={isRTL ? 'mr-16' : 'ml-16'}>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">{t('mockInterview')}</h3>
+                <p className="text-gray-600">
+                  {t('practiceInterview')}
+                </p>
+              </div>
             </div>
 
             {/* Feature 2 */}
-            <div className="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <div className={`group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white ${isRTL ? 'float-right' : 'float-left'}`}>
                 <BookOpen className="h-6 w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Study Buddy</h3>
-              <p className="text-gray-600">
-                Get personalized explanations, summaries, and quizzes tailored to your learning style and pace.
-              </p>
+              <div className={isRTL ? 'mr-16' : 'ml-16'}>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">{t('studyBuddy')}</h3>
+                <p className="text-gray-600">
+                  {t('personalizedHelp')}
+                </p>
+              </div>
             </div>
 
             {/* Feature 3 */}
-            <div className="group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+            <div className={`group rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${isRTL ? 'text-right' : 'text-left'}`}>
+              <div className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white ${isRTL ? 'float-right' : 'float-left'}`}>
                 <Video className="h-6 w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Real-time Video Chat</h3>
-              <p className="text-gray-600">
-                Connect with tutors or study groups via high-quality video calls with built-in learning tools.
-              </p>
+              <div className={isRTL ? 'mr-16' : 'ml-16'}>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">{t('videoMeeting')}</h3>
+                <p className="text-gray-600">
+                  {t('liveSessionsHost')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
